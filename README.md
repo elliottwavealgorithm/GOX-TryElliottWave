@@ -1,115 +1,157 @@
-GOX — Generative Object eXtraction for Elliott Wave Research
+<p align="center">
+  <img src="https://img.shields.io/badge/Status-Research%20MVP-blue?style=for-the-badge" alt="Status" />
+  <img src="https://img.shields.io/badge/TradingView-Partner-131722?style=for-the-badge&logo=tradingview&logoColor=white" alt="TradingView Partner" />
+  <img src="https://img.shields.io/badge/License-Research-green?style=for-the-badge" alt="License" />
+</p>
 
-TryElliottWave · Research MVP
+<h1 align="center">
+  <strong>GOX</strong>
+  <br />
+  <sub>Generative Object eXtraction for Elliott Wave Research</sub>
+</h1>
 
-GOX is an early-stage research MVP developed under the TryElliottWave initiative.
-The project explores how traders conceptualize, draw, and validate Elliott Wave structures on financial charts, and how those human-generated structures can be transformed into structured datasets suitable for computational analysis and machine learning research.
+<p align="center">
+  <strong>TryElliottWave · Research MVP</strong>
+</p>
 
-At its core, GOX bridges human technical analysis cognition with programmatic representation, enabling the systematic study of subjective chart annotations at scale.
+---
 
-Research Motivation
+GOX is an early-stage research MVP developed under the **TryElliottWave** initiative. The project explores how traders conceptualize, draw, and validate Elliott Wave structures on financial charts, and how those human-generated structures can be transformed into structured datasets suitable for computational analysis and machine learning research.
 
-Elliott Wave Theory is widely used in discretionary trading, yet remains difficult to formalize due to its interpretive and subjective nature. Most existing tools focus on visualization or post-hoc labeling, but do not capture the decision process behind wave construction.
+> At its core, GOX bridges **human technical analysis cognition** with **programmatic representation**, enabling the systematic study of subjective chart annotations at scale.
 
-GOX approaches this gap by treating chart drawings as first-class data objects, allowing researchers to:
+---
 
-Observe how humans encode market structure visually
+## 📌 Research Motivation
 
-Measure consistency, variance, and rule adherence across users
+Elliott Wave Theory is widely used in discretionary trading, yet remains difficult to formalize due to its interpretive and subjective nature. Most existing tools focus on visualization or post-hoc labeling, but do not capture the **decision process** behind wave construction.
 
-Explore whether subjective wave interpretations can be modeled, evaluated, or assisted algorithmically
+GOX approaches this gap by treating chart drawings as **first-class data objects**, allowing researchers to:
 
-Core Objectives
+- 🔍 **Observe** how humans encode market structure visually
+- 📊 **Measure** consistency, variance, and rule adherence across users
+- 🤖 **Explore** whether subjective wave interpretations can be modeled, evaluated, or assisted algorithmically
 
-Enable users to draw Elliott Wave and Fibonacci structures directly on interactive financial charts
+---
 
-Programmatically capture each drawing as structured data:
+## 🎯 Core Objectives
 
-Anchor points and geometry
+| Objective | Description |
+|-----------|-------------|
+| **Interactive Drawing** | Enable users to draw Elliott Wave and Fibonacci structures directly on interactive financial charts |
+| **Structured Capture** | Programmatically capture each drawing as structured data: anchor points, geometry, wave hierarchy, labeling, timestamps, and chart context |
+| **Real-time Validation** | Apply real-time structural validation against formal Elliott Wave principles |
+| **Dataset Persistence** | Persist datasets for downstream research and ML/LLM experimentation |
+| **Feedback Mechanisms** | Provide feedback that surfaces rule violations, ambiguities, or alternative interpretations |
 
-Wave hierarchy and labeling
+---
 
-Timestamps and chart context
+## 🏗️ System Overview
 
-Apply real-time structural validation against formal Elliott Wave principles
+```
+┌─────────────────────────────────────────────────────────────────────────┐
+│                              FRONTEND                                    │
+│         TradingView Advanced Charts · Native Drawing Tools              │
+└─────────────────────────────────┬───────────────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                      EXTRACTION LAYER (GOX)                             │
+│      Converts drawings → Normalized, machine-readable representations   │
+└─────────────────────────────────┬───────────────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                        VALIDATION ENGINE                                │
+│   Deterministic rule checks: wave relationships, retracements, overlaps │
+└─────────────────────────────────┬───────────────────────────────────────┘
+                                  │
+                                  ▼
+┌─────────────────────────────────────────────────────────────────────────┐
+│                   RESEARCH DATASET PIPELINE                             │
+│            Pattern analysis · Label evaluation · ML/LLM training        │
+└─────────────────────────────────────────────────────────────────────────┘
+```
 
-Persist datasets for downstream research and ML/LLM experimentation
+---
 
-Provide feedback mechanisms that surface rule violations, ambiguities, or alternative interpretations
+## 📈 Current Status
 
-System Overview
+<table>
+  <tr>
+    <td><strong>🌐 Live MVP</strong></td>
+    <td><a href="https://www.tryelliottwave.com">www.tryelliottwave.com</a></td>
+  </tr>
+</table>
 
-Frontend
-Integrated with TradingView’s Advanced Charts library to allow native drawing tools and high-fidelity chart interaction.
+### ✅ Demonstrates
 
-Extraction Layer (GOX)
-Converts user-generated chart drawings into normalized, machine-readable representations.
+- Advanced Charts integration
+- Drawing capture and persistence
+- Core validation logic and data workflow
 
-Validation Engine
-Applies deterministic rule checks (e.g. wave relationships, retracements, overlaps) to assess structural consistency.
+### 🔬 Active Focus
 
-Research Dataset Pipeline
-Stores anonymized drawing events and metadata to support:
+- Data schema refinement
+- Rule formalization
+- Research-oriented instrumentation *(rather than trading signals)*
 
-Pattern analysis
+---
 
-Label quality evaluation
-
-Training or evaluation of ML/LLM-based assistants
-
-Current Status
-
-MVP live at: https://www.tryelliottwave.com
-
-Demonstrates:
-
-Advanced Charts integration
-
-Drawing capture and persistence
-
-Core validation logic and data workflow
-
-Active focus on:
-
-Data schema refinement
-
-Rule formalization
-
-Research-oriented instrumentation rather than trading signals
-
-Research Scope (Non-Exhaustive)
+## 🔭 Research Scope
 
 Potential research directions enabled by GOX include:
 
-Modeling human variability in Elliott Wave interpretation
+| Area | Description |
+|------|-------------|
+| **Human Variability** | Modeling human variability in Elliott Wave interpretation |
+| **Validation Methods** | Rule-based vs probabilistic validation of technical structures |
+| **AI Assistance** | Assisted technical analysis via AI feedback loops |
+| **Feature Extraction** | Feature extraction from subjective chart annotations |
+| **Hybrid Representations** | Symbolic + statistical representations of market structure |
 
-Rule-based vs probabilistic validation of technical structures
+---
 
-Assisted technical analysis via AI feedback loops
+## 🎓 Educational & Institutional Context
 
-Feature extraction from subjective chart annotations
+<table>
+  <tr>
+    <td>
+      <p>The project is currently developed for <strong>educational and research purposes</strong>, in collaboration with the <strong>Instituto de Análisis Técnico Bursátil (IAT)</strong> in Mexico, an educational partner of TradingView.</p>
+      <br />
+      <p><em>There is no trading execution, brokerage connectivity, or automated decision-making in the current scope.</em></p>
+    </td>
+  </tr>
+</table>
 
-Hybrid symbolic + statistical representations of market structure
+---
 
-Educational & Institutional Context
-
-The project is currently developed for educational and research purposes, in collaboration with the Instituto de Análisis Técnico Bursátil (IAT) in Mexico, an educational partner of TradingView.
-
-There is no trading execution, brokerage connectivity, or automated decision-making in the current scope.
-
-Future Directions
+## 🚀 Future Directions
 
 If validated successfully, GOX could evolve into:
 
-A public research platform for technical analysis cognition
+1. **Public Research Platform** — For technical analysis cognition studies
+2. **Dataset Foundation** — For AI-assisted market structure interpretation
+3. **Educational Tool** — To improve analyst training through structured feedback
 
-A dataset foundation for AI-assisted market structure interpretation
+> Any future commercial deployment would pursue the appropriate licensing agreements and ethical research considerations.
 
-An educational tool to improve analyst training through structured feedback
+---
 
-Any future commercial deployment would pursue the appropriate licensing agreements and ethical research considerations.
+## ⚠️ Disclaimer
 
-Disclaimer
+<table>
+  <tr>
+    <td align="center">
+      <strong>GOX is a research prototype.</strong>
+      <br /><br />
+      It does not provide financial advice, trading signals, or execution capabilities.
+    </td>
+  </tr>
+</table>
 
-GOX is a research prototype.
-It does not provide financial advice, trading signals, or execution capabilities.
+---
+
+<p align="center">
+  <sub>Built with ❤️ for Elliott Wave Research</sub>
+</p>
